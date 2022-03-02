@@ -5,9 +5,23 @@ Zola theme designed to minimise the energy consumption and CO2 emissions.
 It is ported from [Pelican](https://blog.getpelican.com/) theme [Solar](https://github.com/lowtechmag/solar/):
 > Solar is a pelican theme designed for <https://solar.lowtechmagazine.com>. It is an attempt to radically reduce the energy use the associated with accessing our content.
 
-**DEMO**: TODO
+[**--> DEMO <--**](https://zolar.netlify.app/)
 
 ## Install
+
+Download this theme to your themes directory:
+
+```bash
+$ cd website/themes
+$ git clone https://github.com/gicrisf/zolar.git
+```
+
+Or install as a submodule, if your project is in a git repository:
+
+```bash
+$ cd website/themes
+$ git submodule add https://github.com/gicrisf/zolar.git
+```
 
 ## Features
 
@@ -18,13 +32,14 @@ It is ported from [Pelican](https://blog.getpelican.com/) theme [Solar](https://
 - [x] Give visitors insight into the material conditions of the hardware the website runs on
 - [ ] Tags
 - [ ] Custom colors for each category
-- [ ] Multilang support
+- [ ] Translations
 - [x] RSS/Atom feed support
 - [ ] Open Graph Metadata
 - [ ] Twitter Card Metadata
 - [ ] Sort by date in archive
 - [ ] Pagination in lists
 - [ ] Pagination in posts
+- [ ] Period archives (Pelican feature, not displayed, low priority)
 
 ### Additionals
 
@@ -39,6 +54,20 @@ It is ported from [Pelican](https://blog.getpelican.com/) theme [Solar](https://
 - [ ] Single author pages with bio
 
 ## Configurations
+
+Enable the theme in your config file:
+
+```toml
+theme = "zolar"
+```
+
+Set your preferred date format and timezone:
+
+```toml
+[extra]
+timeformat = "%B %Y"
+timezone = "UTC"
+```
 
 ## Contributing
 
@@ -57,6 +86,8 @@ he doesn't: se riesco a fare impiegare questo tema a più persone è già un suc
 Did you liked this theme? Buy me a coffee!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
+
+<!-- support the magazine too -->
 
 ## License
 

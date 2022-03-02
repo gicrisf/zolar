@@ -1,0 +1,21 @@
+{% macro card(item) %}
+<article>
+  <!-- TODO make use right URL functions -->
+  <!-- TODO use right time format -->
+  <a href="{{ config.base_url }}/{{ item.path }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
+
+    {% if item.extra.featured_image %}
+    <div class="featured-img" style="background-image: url('{{ config.base_url }}{{ item.extra.featured_image }}')">
+    </div>
+    {% endif %}
+
+    <h2 class="entry-title">{{ item.title }}</h2>
+  </a>
+  {% if item.description %}
+  <p class="index-summary">{{ item.description }}</p>
+  {% endif %}
+  <time class="published" datetime="{{ item.date }}{# isoformat here #}">{{ item.date }}</time>
+  {# MEMO format like this #}
+  {# item.date | strftime('%B %Y') #}
+</article>
+{% endmacro card %}

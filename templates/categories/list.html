@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+<ul>
+{% for cat in terms %}
+    <li><a href="{{ get_taxonomy_url(kind='categories', name=cat.name) }}">{{ cat.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

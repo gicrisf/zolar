@@ -1,15 +1,35 @@
 base_url = "https://zolar.netlify.app"
 title = "Zolar"
-description = "An enviroment friendly theme"
+description = "This is a solar-powered website, which means it sometimes goes offline"
 
 default_language = "en"
-
 generate_feed = true
-
 compile_sass = true
 
+# Built in taxonomies of zolar
+taxonomies = [
+           {name = "tags"},
+           {name = "categories"},
+]
+
 [extra]
-# custom_css
+# Put all your custom variables here
+#
+# ---------------------------------------------------------
+
+# Custom css to style over the defaults. This is useful when you only have a
+# few small tweaks to make rather than a major rehaul to the theme.
+# It would be best to make this a proper .sass or .scss file in sass/ rather
+# than placing in static/
+# custom_css = "custom.css"
+
+# Bind a custom category to a color for links to the category and related images
+# If not specifically requested, you shouldn't expect any color other than black
+categories = [
+    { cat = "high-tech-problems", color = "#d11305" },
+    { cat = "low-tech-solutions", color = "#162dab" },
+    { cat = "obsolete-technology", color = "#006951" },
+]
 
 email = "solar@lowtechmagazine.com"
 
@@ -22,3 +42,11 @@ social_links = [
 [extra.footer]
 author = "Kris De Decker"
 email = "solar [at] lowtechmagazine [dot] com"
+
+info_menu = [
+    {url = "/about/", name = "About the site"},
+    {url = "/power/", name = "Power"},
+    {url = "/colophon/", name = "Colophon"},
+    {url = "/donate/", name = "Donate"},
+    {url = "/privacy/", name = "Privacy Policy"},
+]

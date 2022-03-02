@@ -1,9 +1,23 @@
 {% extends "index.html" %}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
 
 {% block content %}
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-  {{ page.content | safe }}
-</div>
+<section id="content" class="page">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="summary">
+      {{ page.description }}
+    </p>
+  </header>
+	<div class="entry-content">
+	  {{ page.content | safe }}
+	</div>
+
+	{% if page.modified %}{# TODO page.updated /date #}
+  <!--span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span-->
+		<p>
+		Last updated: {{ page.locale_modified }}
+		</p>
+	{% endif %}
+</section>
 {% endblock content %}

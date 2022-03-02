@@ -1,0 +1,61 @@
+{% extends "index.html" %}
+{% block body_class %}
+<body>
+{% endblock body_class %}
+
+{% block content %}
+<section id="archive">
+
+{% block content_title %}{% endblock %}
+
+<div id="filters">
+    <div class="filter active desc" id="date">
+    Date
+    </div>
+
+    <div class="filter asc" id="title">
+    Title
+    </div>
+
+    <div class="filter asc" id="cat">
+    Theme
+    </div>
+</div>
+
+  {% set section_item = get_section(path="_index.md") %}
+  {% for _year, posts in section_item.pages | group_by(attribute="year") %}
+  <ul>
+    {% for item in posts %}
+    <!-- TODO category identif. -->
+    <li class="cat-id">
+      <article>
+        {{ post::time(item=item) }}
+
+        <div class="entry-title">
+          <a href="{{ item.permalink }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">{{ item.title }}</a>
+        </div>
+
+        {% if item.taxonomies.categories %}
+        {% for cat in item.taxonomies.categories %}{# this theme supports just only one! #}
+        <div class="{{ cat }}">
+          <a href="{{ config.base_url}}/categories/{{ cat }}" class="category">{{ cat }}</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </article>
+    </li><!--./ cat-id -->
+    {% endfor %}
+  </ul><!-- /#archive-list -->
+  {% endfor %}
+</section><!-- /#content -->
+
+<!-- LIST SORTING-------------->
+
+<script
+src="{{ config.base_url }}/js/tinysort.min.js"></script>
+
+<script>
+  var listElements = document.querySelectorAll('#archive ul li'); var filters = document.getElementsByClassName('filter'); for (var i = 0; i < filters.length; i++) { filters[i].addEventListener('click', sort, false); } function sort() { for (var j = 0; j < filters.length; j++) { filters[j].classList.remove('active'); } this.classList.add('active'); this.classList.toggle('desc'); this.classList.toggle('asc'); var type = (this).id; switch (type) { case "title": tinysort(listElements,{selector:'.entry-title',order:(this.isAsc=!this.isAsc)?'asc':'desc'}); break; case "date": tinysort(listElements,{selector:'time',attr:'datetime',order:(this.isAsc=!this.isAsc)?'asc':'desc'}); break; case "cat": tinysort(listElements,{selector:'.category',order:(this.isAsc=!this.isAsc)?'asc':'desc'}); break; } }
+</script>
+
+{% endblock content %}

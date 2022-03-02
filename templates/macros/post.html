@@ -14,8 +14,12 @@
   {% if item.description %}
   <p class="index-summary">{{ item.description }}</p>
   {% endif %}
-  <time class="published" datetime="{{ item.date }}{# isoformat here #}">{{ item.date }}</time>
-  {# MEMO format like this #}
-  {# item.date | strftime('%B %Y') #}
+  {{ post::time(item=item) }}
 </article>
 {% endmacro card %}
+
+{% macro time(item) %}
+<time class="published" datetime="{{ item.date }}{# isoformat here #}">{{ item.date }}</time>
+{# MEMO format like this #}
+{# item.date | strftime('%B %Y') #}
+{% endmacro time %}

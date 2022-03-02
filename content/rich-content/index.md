@@ -1,6 +1,7 @@
 +++
 title="Rich Content"
 date=2021-06-26
+draft=true
 +++
 
 This theme provides support for static and no-JS versions of various social

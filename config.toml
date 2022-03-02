@@ -1,0 +1,11 @@
+base_url = "https://zolar.netlify.app"
+title = "Zolar theme"
+description = "An enviroment friendly theme"
+
+default_language = "en"
+
+generate_feed = true
+
+compile_sass = true
+
+[extra]

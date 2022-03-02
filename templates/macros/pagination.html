@@ -1,0 +1,11 @@
+{% macro paginate() %}
+<div class="pagination">
+  {% if paginator.previous -%}
+  <a href="{{ paginator.previous }}">&laquo;</a>
+  {% endif %}
+  page {{ "1" }} / {{ "10" }} {# TODO #}
+  {% if paginator.next -%}
+  <a href="{{ paginator.next }}">&raquo;</a>
+  {% endif %}
+</div>
+{% endmacro paginate %}

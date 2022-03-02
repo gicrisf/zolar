@@ -17,6 +17,9 @@ taxonomies = [
 #
 # ---------------------------------------------------------
 
+# Enable/disable functions relative to solar monitoring
+solar = true
+
 # Preferred time format
 timeformat = "%B %Y"
 timezone = "UTC"
@@ -27,12 +30,22 @@ timezone = "UTC"
 # than placing in static/
 # custom_css = "custom.css"
 
+# Main menu links
+main_menu = [
+    { url="/about/", name="About" },
+    { url="/low-tech-solutions/", name="Low-tech Solutions", is_category=true },
+    { url="/obsolete-technology/", name="Obsolete Technology", is_category=true },
+    { url="/offline-reading/", name="Offline Reading", is_category=true },
+    { url="/archive/", name="Archive" },
+    { url="/donate/", name="Donate" },
+]
+
 # Bind a custom category to a color for links to the category and related images
 # If not specifically requested, you shouldn't expect any color other than black
 categories = [
-    { cat = "high-tech-problems", color = "#d11305" },
-    { cat = "low-tech-solutions", color = "#162dab" },
-    { cat = "obsolete-technology", color = "#006951" },
+    { name = "high-tech-problems", color = "#d11305" },
+    { name = "low-tech-solutions", color = "#162dab" },
+    { name = "obsolete-technology", color = "#006951" },
 ]
 
 email = "solar@lowtechmagazine.com"

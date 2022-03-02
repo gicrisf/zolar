@@ -1,0 +1,20 @@
+{%- macro sun_icon() -%}
+<svg class="icon" viewBox="0 0 500 500"><title>Solar</title><circle class="svg_fill" cx="248.48" cy="252.55" r="97.03"/><rect class="svg_fill" x="234.53" y="17.45" width="27.9" height="112.39"/><rect class="svg_fill" x="234.53" y="375.25" width="27.9" height="112.39"/><rect class="svg_fill" x="413.42" y="196.35" width="27.9" height="112.39" transform="translate(679.92 -174.83) rotate(90)"/><rect class="svg_fill" x="55.63" y="196.35" width="27.9" height="112.39" transform="translate(322.12 182.97) rotate(90)"/><rect class="svg_fill" x="361.03" y="69.85" width="27.9" height="112.39" transform="translate(198.96 -228.23) rotate(45)"/><rect class="svg_fill" x="108.03" y="322.85" width="27.9" height="112.39" transform="translate(303.75 24.77) rotate(45)"/><rect class="svg_fill" x="361.03" y="322.85" width="27.9" height="112.39" transform="translate(908.15 381.93) rotate(135)"/><rect class="svg_fill" x="108.03" y="69.85" width="27.9" height="112.39" transform="translate(297.35 128.93) rotate(135)"/></svg>
+{%- endmacro logo -%}
+
+{% macro main_menu() %}
+<ul id="menu-list">
+  {% if config.extra.main_menu is defined %}
+  {% for item in config.extra.main_menu %}
+  {% if item.is_category %}
+  <li><a class="category {{ item.url | slugify }}" href={{ get_url(path=item.url) }}>{{ item.name }}</a></li>
+  {% else %}
+  <li><a href={{ get_url(path=item.url) }}>{{ item.name }}</a></li>
+  {% endif %}
+  {% endfor %}
+  {% endif %}{# main_menu defined #}
+
+  <!-- TODO move to feed.html macro and support multiple feeds -->
+  <li class="social"><a href="{{ config.base_url }}/{{ config.feed_filename }}" type="application/rss+xml" rel="alternate" target="_blank"><svg viewBox="0 0 80 80" class="icon"><title>rss</title><circle cx="19.91" cy="58.23" r="6.86"/><path d="M67.89,65.72H55.7A41.86,41.86,0,0,0,13.89,23.91V11.73A54.06,54.06,0,0,1,67.89,65.72Z"/><path d="M48.93,65.72H36.75A22.88,22.88,0,0,0,13.89,42.87V30.68A35.08,35.08,0,0,1,48.93,65.72Z"/></svg></a></li>
+</ul>
+{% endmacro main_menu %}

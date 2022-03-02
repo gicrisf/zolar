@@ -1,0 +1,21 @@
+{% macro cover(page) %}
+<ul class="cols cover"><!-- TODO class of category name -->
+  {{ post::card(item=page) }}
+</ul>
+{% endmacro cover %}
+
+{% macro recent(pages) %}
+<ul class="cols recent">
+  {% for item in pages | slice(start=1) %}
+  {{ post::card(item=item) }}
+  {% endfor %}
+</ul>
+{% endmacro recent %}
+
+{# macro popular(pages) #}{# DRAFT #}
+{# for item in pages | slice(start=12) #}
+{# if the article has cover #}
+{# post::card(item=item) #}
+{# endif #}
+{# endfor #}
+{# endmacro popular #}

@@ -5,7 +5,7 @@ Zola theme designed to minimise the energy consumption and CO2 emissions.
 It is ported from [Pelican](https://blog.getpelican.com/) theme [Solar](https://github.com/lowtechmag/solar/):
 > Solar is a pelican theme designed for <https://solar.lowtechmagazine.com>. It is an attempt to radically reduce the energy use the associated with accessing our content.
 
-[**--> DEMO <--**](https://zolar.netlify.app/)
+[**--> DEMO <--**](https://zolartheme.netlify.app/)
 
 ## Install
 

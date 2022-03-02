@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title%}{{ config.title }} - Articles by {{ author }}{% endblock %}
+
+{% block content_title %}
+<h2>Articles by {{ author }}</h2>
+{% endblock %}
+
+{% block content %}
+{# bio here #}
+
+{% for page in paginator.pages %}
+    {{ post::card(item=page) }}
+{% endfor %}
+
+{# TODO pagination #}
+{% endblock content %}

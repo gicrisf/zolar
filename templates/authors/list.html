@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - Authors{% endblock %}
+
+{% block content %}
+<h1>Authors on {{ config.title }}</h1>
+
+<ul>
+  {% set section_item = get_section(path="authors/_index.md") %}
+  {%- for _year, term in section_item.pages | group_by(attribute="year") %}
+  <li><a href="{{ term.permalink }}">{{ term }}</a> ({{ term|count }})</li>
+  {% endfor -%}
+</ul>
+{% endblock %}

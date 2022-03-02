@@ -32,10 +32,11 @@ It is ported from [Pelican](https://blog.getpelican.com/) theme [Solar](https://
 - [x] Customizable menus (look at `config.toml`)
 - [ ] Make solar energetic insights optional
 - [ ] Pre-rendered syntax highlighting (thanks to Zola, no JS needed!)
-- [ ] Good table styling
+- [ ] Better table styling
 - [ ] Further image optimization using multiple sources of a single image for different screen sizes (yes, there's a fallback support for ancient browsers)
 - [ ] Alternatives to dithering for image compression
 - [ ] Optional external link arrows in page content
+- [ ] Single author pages with bio
 
 ## Configurations
 

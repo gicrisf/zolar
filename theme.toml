@@ -1,0 +1,26 @@
+name = "zolar"
+description = "Zola theme designed to minimise the energy consumption and CO2 emissions"
+license = "MIT"
+homepage = "https://github.com/gicrisf/zolar"
+# The minimum version of Zola required
+min_version = "0.8.0"
+# An optional live demo URL
+demo = "https://zolar.netlify.app"
+
+# Any variable there can be overriden in the end user `config.toml`
+# You don't need to prefix variables by the theme name but as this will
+# be merged with user data, some kind of prefix or nesting is preferable
+# Use snake_casing to be consistent with the rest of Zola
+[extra]
+
+# The theme author info: you!
+[author]
+name = "Giovanni Crisalfi"
+homepage = "https://github.com/gicrisf"
+
+# If this is porting a theme from another static site engine, provide
+# the info of the original author here
+[original]
+author =  "Marie Otsuka"
+homepage = "https://solar.lowtechmagazine.com/"
+repo = "https://github.com/lowtechmag/solar"

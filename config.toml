@@ -1,5 +1,5 @@
 base_url = "https://zolar.netlify.app"
-title = "Zolar theme"
+title = "Zolar"
 description = "An enviroment friendly theme"
 
 default_language = "en"
@@ -9,3 +9,16 @@ generate_feed = true
 compile_sass = true
 
 [extra]
+# custom_css
+
+email = "solar@lowtechmagazine.com"
+
+social_links = [
+    {url = "https://twitter.com/lowtechmagazine", name = "twitter"},
+    {url = "https://www.facebook.com/Lowtechmagazine/", name = "facebook"},
+    # {url = "https://github.com/gicrisf", name = "github"},
+]
+
+[extra.footer]
+author = "Kris De Decker"
+email = "solar [at] lowtechmagazine [dot] com"

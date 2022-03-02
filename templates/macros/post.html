@@ -1,12 +1,9 @@
 {% macro card(item) %}
 <article>
-  <!-- TODO make use right URL functions -->
-  <!-- TODO use right time format -->
-  <a href="{{ config.base_url }}/{{ item.path }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
+  <a href="{{ item.permalink }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
 
     {% if item.extra.featured_image %}
-    <div class="featured-img" style="background-image: url('{{ config.base_url }}{{ item.extra.featured_image }}')">
-    </div>
+    {{ post::featured_image(page=item, image=item.extra.featured.image) }}
     {% endif %}
 
     <h2 class="entry-title">{{ item.title }}</h2>
@@ -18,8 +15,20 @@
 </article>
 {% endmacro card %}
 
+{% macro featured_img(page, image) %}
+{# TODO srcset support #}
+<div class="featured-img" style="background-image: url('{{ page.permalink }}{{ src }}')"><(div)>
+{% endmacro featured_image %}
+
 {% macro time(item) %}
-<time class="published" datetime="{{ item.date }}{# isoformat here #}">{{ item.date }}</time>
-{# MEMO format like this #}
-{# item.date | strftime('%B %Y') #}
+{# TODO displaying #}
+<time class="published" datetime="{{ item.date | date(format=config.extra.timeformat | default(value='%B %Y'), timezone=config.extra.timezone | default(value='America/New_York')) }}">{{ item.date }}</time>
 {% endmacro time %}
+
+{# TODO #}
+{% macro translations(item) %}
+Translations:
+{% for translation in item %}
+<a href="{# permalink #}">{# lang #}</a>
+{% endfor %}
+{% endmacro translations %}

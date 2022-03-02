@@ -28,7 +28,7 @@
       {# TODO math block with katex support #}
     </head>
 
-    {% block body_class %} {# TODO looks like a hacky move #}
+    {% block body_class %} {# TODO looks like a hacky move: change with support for custom classes #}
     <body>
     {% endblock body_class %}
 
@@ -49,7 +49,7 @@
             <li class="low"><a class="category" href="{{ config.base_url }}/low-tech-solutions.html">Low-tech Solutions</a></li>
             <li class="hig"><a class="category" href="{{ config.base_url }}/high-tech-problems.html">High-tech Problems</a></li>
             <li class="obs"><a class="category" href="{{ config.base_url }}/obsolete-technology.html">Obsolete Technology</a></li>
-            <li><a href="{{ config.base_url }}/archives.html">Archive</a></li>
+            <li><a href="{{ config.base_url }}/archives">Archive</a></li>
             <li><a href="{{ config.base_url }}/donate.html">Donate</a></li>
             <!-- TODO move to feed.html macro and support multiple feeds -->
             <li class="social"><a href="{{ config.base_url }}/{{ config.feed_filename }}" type="application/rss+xml" rel="alternate" target="_blank"><svg viewBox="0 0 80 80" class="icon"><title>rss</title><circle cx="19.91" cy="58.23" r="6.86"/><path d="M67.89,65.72H55.7A41.86,41.86,0,0,0,13.89,23.91V11.73A54.06,54.06,0,0,1,67.89,65.72Z"/><path d="M48.93,65.72H36.75A22.88,22.88,0,0,0,13.89,42.87V30.68A35.08,35.08,0,0,1,48.93,65.72Z"/></svg></a></li>

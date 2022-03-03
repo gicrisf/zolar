@@ -1,5 +1,6 @@
 {% macro card(item) %}
 <li>
+  <article>
   <a href="{{ item.permalink }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
 
     {% if item.extra.featured_image is defined  %}
@@ -8,19 +9,50 @@
 
     <h2 class="entry-title">{{ item.title }}</h2>
   </a>
+
+  {% if item.taxonomies.categories is defined %}
+  {# NB disabled on production, probably because of redundance with colors characterization #}
+  {% set first_cat = item.taxonomies.categories.0 %}
+  <a href="{{ get_taxonomy_url(kind='categories', name=first_cat) }}" class="category">{{ first_cat }}</a>
+  {% endif %}
+
+  {% if item.description %}
+  <p class="index-summary">{{ item.description }}</p>
+  {% endif %}
+
+  {{ post::time(item=item) }}
+  </article>
+</li>
+{% endmacro card %}
+
+{% macro cover_card(item) %}
+<li>
+  <a href="{{ item.permalink }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
+    <h2 class="entry-title">{{ item.title }}</h2>
+  </a>
+
   {% if item.taxonomies.categories is defined %}
   {% set first_cat = item.taxonomies.categories.0 %}
   <a href="{{ get_taxonomy_url(kind='categories', name=first_cat) }}" class="category">{{ first_cat }}</a>
   {% endif %}
+
   {% if item.description %}
   <p class="index-summary">{{ item.description }}</p>
   {% endif %}
+
   {{ post::time(item=item) }}
 </li>
-{% endmacro card %}
+<li>
+{% if item.extra.featured_image is defined  %}
+ <a href="{{ item.permalink }}" rel="bookmark" title="Permalink to {{ item.title|striptags }}">
+  {{ post::featured_image(page=item, image=item.extra.featured_image) }}
+ </a>
+{% endif %}
+</li>
+{% endmacro cover_card %}
 
 {% macro featured_image(page, image) %}
-{# TODO srcset support #}
+{# TODO srcset support (additional feature) #}
 <div class="featured-img" style="background-image: url('{{ page.permalink }}{{ page.extra.featured_image }}')"></div>
 {% endmacro featured_image %}
 

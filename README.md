@@ -37,7 +37,7 @@ $ git submodule add https://github.com/gicrisf/zolar.git
 - [ ] Open Graph Metadata
 - [ ] Twitter Card Metadata
 - [ ] Sort by date in archive
-- [ ] Pagination in lists
+- [x] Pagination in lists
 - [ ] Pagination in posts
 - [ ] Period archives (Pelican feature, not displayed, low priority)
 
@@ -45,7 +45,7 @@ $ git submodule add https://github.com/gicrisf/zolar.git
 
 - [x] Anchor links in post subtitles
 - [x] Customizable menus (look at `config.toml`)
-- [ ] Make solar energetic insights optional
+- [x] Make solar energetic insights optional
 - [ ] Pre-rendered syntax highlighting (thanks to Zola, no JS needed!)
 - [ ] Better table styling
 - [ ] Further image optimization using multiple sources of a single image for different screen sizes (yes, there's a fallback support for ancient browsers)

@@ -16,15 +16,14 @@
 {% endmacro forecast %}
 
 {% macro info() %}
-{# TODO from hardcoded URLs to config.toml #}
 <h3>Info</h3>
+{% if config.extra.main_menu is defined %}
 <p>
-  <a href="{{ config.base_url }}/about.html">About the site</a><br>
-  <a href="{{ config.base_url }}/power.html">Power</a><br>
-  <a href="{{ config.base_url }}/colophon.html">Colophon</a><br>
-  <a href="{{ config.base_url }}/donate.html">Donate</a>
+  {% for item in config.extra.footer.info_menu %}
+  <a href={{ get_url(path=item.url) }}>{{ item.name }}</a><br>
+  {% endfor %}
 </p>
-<p><a href="{{ config.base_url }}/privacy.html">Privacy Policy</a></p>
+{% endif %}{# ./info_menu defined #}
 {% endmacro info %}
 
 {% macro contact() %}

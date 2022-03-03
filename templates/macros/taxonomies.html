@@ -1,0 +1,25 @@
+{% macro get_color_from(term) %}
+{%- if config.extra.special_categories is defined -%}
+{%- set cat_slug = term.name | slugify -%}
+{%- for spcat in config.extra.special_categories -%}
+{%- if cat_slug is containing(spcat.name) -%}
+
+{{ spcat.color | trim }}
+
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}{# ./special categories defined #}
+{% endmacro special_cat %}
+
+{% macro get_description_from(term) %}
+{%- if config.extra.special_categories is defined -%}
+{%- set cat_slug = term.name | slugify -%}
+{%- for spcat in config.extra.special_categories -%}
+{%- if cat_slug is containing(spcat.name) -%}
+
+{{ spcat.description | trim }}
+
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}{# ./special categories defined #}
+{% endmacro special_cat %}

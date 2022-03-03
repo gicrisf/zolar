@@ -4,6 +4,7 @@
 {% import "macros/post.html" as post -%}
 {% import "macros/lists.html" as lists -%}
 {% import "macros/pagination.html" as pagination -%}
+{% import "macros/taxonomies.html" as taxonomies -%}
 {% import "macros/footer.html" as footer -%}
 
 <!DOCTYPE html>
@@ -68,7 +69,12 @@
         {# the actual website doesn't display them: maybe it's a not fully developed feature #}
       </section><!--./content-->
 
+      {% block pagination %}
+      {% if paginator.previous or paginator.next %}
       {{ pagination::paginate() }}
+      {% endif %}
+      {% endblock pagination %}
+
       {% endblock content %}
 
       <footer id="content-info" class="body">

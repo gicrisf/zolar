@@ -33,19 +33,31 @@ timezone = "UTC"
 # Main menu links
 main_menu = [
     { url="/about/", name="About" },
-    { url="/low-tech-solutions/", name="Low-tech Solutions", is_category=true },
-    { url="/obsolete-technology/", name="Obsolete Technology", is_category=true },
-    { url="/offline-reading/", name="Offline Reading", is_category=true },
-    { url="/archive/", name="Archive" },
+    { url="/categories/low-tech-solutions/", name="Low-tech Solutions", is_category=true },
+    { url="/categories/high-tech-problems/", name="High Tech Problems", is_category=true },
+    { url="/categories/obsolete-technology/", name="Obsolete Technology", is_category=true },
+    { url="/offline-reading/", name="Offline Reading" },
+    { url="/archives/", name="Archive" },
     { url="/donate/", name="Donate" },
 ]
 
-# Bind a custom category to a color for links to the category and related images
+# Bind categories to special colors and descriptions for links and related images
 # If not specifically requested, you shouldn't expect any color other than black
-categories = [
-    { name = "high-tech-problems", color = "#d11305" },
-    { name = "low-tech-solutions", color = "#162dab" },
-    { name = "obsolete-technology", color = "#006951" },
+special_categories = [ { name = "high-tech-problems", color = "#d11305", description = """
+        High-tech has become the idol of our society, but technological progress is&mdash;
+        more often than not&mdash;aimed at solving problems caused by earlier technical inventions.
+        """ },
+
+    { name = "low-tech-solutions", color = "#162dab", description = """
+        Interesting possibilities arise when you combine old technology with new
+        knowledge and new materials, or when you apply old concepts and traditional
+        knowledge to modern technology.
+        """ },
+
+    { name = "obsolete-technology", color = "#006951", description = """
+        There is a lot of potential in past and often forgotten knowledge and
+        technologies when it comes to designing a sustainable society.
+        """ },
 ]
 
 email = "solar@lowtechmagazine.com"

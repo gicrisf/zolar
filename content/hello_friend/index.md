@@ -20,6 +20,4 @@ Sed a leo id risus venenatis vulputate non quis nulla. Aenean nisl quam, lacinia
 - Aenean facilisis ut ipsum condimentum ultrices.
 - Fusce sed metus vulputate, lobortis purus et, finibus purus. Suspendisse quis posuere lorem. Vivamus vulputate nec risus in pulvinar.
 
-Image. It's slightly boxed:
-
 ![](hello.jpg)

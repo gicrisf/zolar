@@ -10,7 +10,7 @@ categories = ["programming", "wu tang",]
 [extra]
 +++
 
-Here's a general demo of Zola and how things look with zerm.
+Here's a general demo of Zola.
 
 # Header I
 
@@ -18,9 +18,6 @@ Inline code: `println!("Wu Tang!");`
 
 Zola has built in syntax highlighting. If there's not a theme you like, you can
 easily add more.
-
-zerm uses Fira Code fonts, which means we get ligatures in addition to
-Zola's powerful syntax highlighting ✨.
 
 ```rs
 fn foo(arg: String) -> Result<u32, Io::Error> {
@@ -55,11 +52,4 @@ please believe that.
 | Raekwon Da Chef  | 49  | Only Built 4 Cuban Linx...                   | `"no"`  that's spanish for "no"                                         |
 | Ghostface Killah | 49  | Fishscale                                    | i swear you keep asking that question and the answer ain't gonna change |
 | Inspectah Deck   | 49  | CZARFACE                                     | `protect ya neck, boy`                                                  |
-
-
-#### Header IV
-
-Here's a video of my rabbit, Smalls, loaf'n to lofi beats:
-
-{{ youtube(id="UUpuz8IObcs") }}
 

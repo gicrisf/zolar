@@ -6,5 +6,6 @@ path = "about"
 date = 2019-03-21
 +++
 
-Yet another theme for yet another static site generator; that said, I hope you
-like it.
+Zolar is a theme designed to minimise the energy consumption and CO2 emissions.
+It should work perfectly for any solar-powered magazine like [LowTechMag](https://solar.lowtechmagazine.com/).
+This theme is a port of LowTechMag's one.

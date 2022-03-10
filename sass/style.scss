@@ -433,7 +433,7 @@ ARTICLE TYPOGRAPHY
 }
 
 .entry-content {
-	h2, h3, h4, h5, p, ol, ul {
+	h2, h3, h4, h5, p, ol, ul, pre {
 		max-width: 33rem;
 		width: 80%;
 	}
@@ -448,7 +448,7 @@ ARTICLE TYPOGRAPHY
 		margin: 4*$pad auto 0;
 	}
 
-	p {
+	p, pre {
 		margin: 2*$pad auto;
 	}
 

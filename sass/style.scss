@@ -1004,3 +1004,13 @@ MEDIA QUERIES
 		max-width: 50%;
 	}
 }
+
+/* Zola-specific */
+a.zola-anchor {
+	opacity: 0;
+
+	&:hover {
+		opacity: .9;
+		text-decoration: underline;
+	}
+}
